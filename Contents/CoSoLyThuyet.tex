@@ -1,0 +1,31 @@
+\subsection{Cơ sở lý thuyết}
+\begin{itemize}
+  \item \textbf{Thị giác máy tính (Computer Vision):} Đây là một lĩnh vực của trí tuệ nhân tạo cho phép máy tính trích xuất thông tin có ý nghĩa từ hình ảnh hoặc video. Trong dự án này, Computer Vision được sử dụng để phân tích dữ liệu từ camera giao thông nhằm phát hiện và định vị các phương tiện trên đường như xe máy, xe hơi, xe buýt,... Thị giác máy tính là nền tảng cho các tác vụ như đếm số lượng xe, xác định mật độ giao thông, và trích xuất đặc trưng để phục vụ dự đoán.
+
+  \item \textbf{Mạng nơ-ron tích chập (Convolutional Neural Network - CNN):} Là một kiến trúc mạng học sâu được thiết kế đặc biệt để xử lý dữ liệu ảnh. CNN có khả năng học các đặc trưng không gian trong ảnh bằng cách áp dụng các phép tích chập (convolution) và pooling. Trong hệ thống, CNN giúp nhận diện và phân loại phương tiện giao thông với độ chính xác cao.
+
+  \item \textbf{YOLO (You Only Look Once):} Là một dòng mô hình nhận diện đối tượng trong ảnh thời gian thực, nổi bật bởi tốc độ xử lý nhanh và độ chính xác cao. Phiên bản YOLOv8 là một trong những phiên bản tiên tiến nhất hiện nay, có thể phát hiện và phân loại các phương tiện trong hình ảnh một cách hiệu quả, phù hợp với yêu cầu xử lý ảnh theo chu kỳ ngắn.
+
+  \item \textbf{Mô hình dự báo chuỗi thời gian (Time Series Forecasting):} Trong hệ thống, việc dự đoán tình trạng giao thông tương lai gần là rất quan trọng để điều chỉnh tần suất xử lý ảnh và cảnh báo người dùng. Các mô hình như LSTM (Long Short-Term Memory), Prophet, hay ARIMA được sử dụng để học từ dữ liệu lịch sử về mật độ giao thông và đưa ra dự báo trong ngắn hạn. LSTM đặc biệt phù hợp vì khả năng ghi nhớ các thông tin dài hạn và xử lý chuỗi có tính tuần hoàn.
+
+  \item \textbf{Biểu đồ nhiệt (Heatmap):} Là một kỹ thuật trực quan hóa dữ liệu nhằm biểu thị mật độ hoặc cường độ của một hiện tượng tại các vị trí địa lý khác nhau. Trong đề tài, heatmap dùng để minh họa khu vực có mật độ giao thông cao (màu đỏ), trung bình (màu vàng), và thấp (màu xanh) trên bản đồ. Dữ liệu đầu vào của heatmap có thể đến từ kết quả nhận diện AI hoặc phản hồi của người dùng.
+
+  \item \textbf{Xác định vị trí bằng GPS:} GPS (Global Positioning System) cho phép xác định vị trí của thiết bị di động hoặc phương tiện giao thông trong thời gian thực. Trong hệ thống, thông tin vị trí GPS từ người dùng được dùng để hiển thị bản đồ nhiệt tại khu vực gần nhất, đồng thời có thể giúp điều hướng thông minh dựa trên tình hình giao thông hiện tại.
+\end{itemize}
+
+\subsection{Công nghệ sử dụng}
+\begin{itemize}
+  \item \textbf{OpenCV:} Thư viện mã nguồn mở mạnh mẽ dùng cho xử lý ảnh và video. OpenCV hỗ trợ các kỹ thuật như làm mịn ảnh, tách nền, nhận diện chuyển động, và xử lý khung hình thời gian thực để chuẩn bị dữ liệu đầu vào cho mô hình nhận diện.
+
+  \item \textbf{YOLOv8 - Ultralytics:} Phiên bản mới nhất của dòng YOLO, nổi bật với khả năng huấn luyện linh hoạt, hỗ trợ xuất mô hình sang ONNX hoặc TensorRT để tối ưu hóa tốc độ. YOLOv8 được dùng để phát hiện và phân loại phương tiện trên đường từ ảnh camera giao thông.
+
+  \item \textbf{PyTorch hoặc TensorFlow:} Là hai framework học sâu phổ biến nhất hiện nay. Chúng hỗ trợ huấn luyện và triển khai các mô hình CNN, LSTM, và cả việc tích hợp mô hình vào backend hoặc mobile app.
+
+  \item \textbf{LeafletJS:} Thư viện JavaScript mã nguồn mở giúp hiển thị bản đồ tương tác, nhẹ và dễ tích hợp. Leaflet sẽ dùng để vẽ bản đồ nhiệt, các vị trí camera, cũng như tuyến đường khả thi.
+
+  \item \textbf{Google Maps API (nếu có điều kiện tài chính):} Dùng để hiển thị bản đồ chi tiết, tra cứu vị trí, hướng đi, hoặc overlay dữ liệu heatmap. Tuy nhiên, vì chi phí API khá cao, có thể thay thế bằng bản đồ Leaflet kết hợp OpenStreetMap.
+
+  \item \textbf{Firebase / MongoDB:} Cơ sở dữ liệu dùng để lưu trữ dữ liệu người dùng, ảnh kết quả AI, feedback từ người dùng, và lịch sử mật độ giao thông. Firebase cũng có thể hỗ trợ push notification cho cảnh báo.
+
+  \item \textbf{Flutter / React Native:} Công nghệ để xây dựng ứng dụng mobile đa nền tảng. Ứng dụng sẽ cho phép người dùng xem bản đồ nhiệt, nhận cảnh báo, báo cáo sự cố, và tra cứu tuyến đường.
+\end{itemize}

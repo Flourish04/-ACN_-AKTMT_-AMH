@@ -1,0 +1,21 @@
+\section{Yêu cầu về hệ thống}
+\subsection{Yêu cầu chức năng}
+\begin{itemize}
+  \item Hệ thống có khả năng thu nhận hình ảnh từ camera giao thông theo thời gian thực.
+  \item Tiền xử lý ảnh và nhận diện mật độ phương tiện trên từng khu vực giao thông.
+  \item Hiển thị bản đồ nhiệt tương ứng với mật độ phương tiện trên web và ứng dụng di động.
+  \item Cung cấp API định vị vị trí người dùng bằng GPS và hiển thị trạng thái giao thông xung quanh.(Nếu muốn dùng google thì cần trả tiền, đang cân nhắc hỏi ý kiến thầy)
+  \item Điều chỉnh chu kỳ xử lý ảnh dựa trên mô hình AI dự đoán tình trạng ùn tắc. (Hệ thống cần dựa vào 1 tiêu chi để chọn chu kỳ lấy ảnh cho tối ưu. vd: dựa vào dữ liệu quá khứ, dự đoán mật độ trong tương lai có thể ùn tắt, mật độ hiện tại đang vượt mức pickelball)
+  \item Cho phép người dùng báo cáo sự cố giao thông hoặc cập nhật thông tin thực tế (crowdsourcing). (Các sự cố như tai nạn, ngập, thời tiết xấu,... bên cạnh đó có thể hiển thị hỏi người dùng về tình trạng giao thông để hỗ trợ model dự đoán và độ tin cậy, Người dùng cần cấp chung với ảnh)
+  \item Quản lý tài khoản người dùng, đăng nhập, đăng xuất và phân quyền sử dụng. (Này làm sương sương tại app không cần chuyên sâu về này)
+  \item Gợi ý tuyến đường di chuyển tối ưu khi có điều kiện thời gian và mật độ giao thông thực tế. (này tương đối khó cân nhắc làm or không)
+\end{itemize}
+\subsection{Yêu cầu phi chức năng}
+\begin{itemize}
+  \item Hệ thống phải có khả năng mở rộng để tích hợp thêm nhiều camera và khu vực. (Hệ thống có thể dễ dàng mở rộng khi muốn thêm tuyến đường mới)
+  \item Đảm bảo tốc độ phản hồi nhanh trên cả web và ứng dụng di động (dưới 3 giây). (Thời gian phản hồi cần xem xét lại cho phù hợp với khả năng)
+  \item Dữ liệu được bảo mật và tuân thủ các quy định về quyền riêng tư người dùng. (Quan trọng tránh leak vị trí, tuyến đường đi của người dùng)
+  \item Mô hình AI phải có khả năng học và cập nhật để cải thiện độ chính xác theo thời gian. (hardcore)
+  \item Hệ thống phải vận hành ổn định, đảm bảo uptime tối thiểu 95\%. (Này cũng tùy tài nguyên hệ thống)
+  \item Dễ dàng triển khai và bảo trì trên hạ tầng đám mây hoặc server nội bộ.
+\end{itemize}
